@@ -20,10 +20,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install azure-cli
 
+      - name: Check AZ Version
+        run: az --version
+
       - name: Azure Login
         uses: azure/login@v1
         env:
           creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
+          allow-no-subscriptions: true
+          
       - name: Azure CLI script
         uses: azure/CLI@v1
         with:
