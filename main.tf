@@ -21,8 +21,8 @@ provider "abbey" {
   server_url = "http://localhost:8080/v1/"
 }
 
-resource "abbey_grant_kit" "abbey_demo_site_kit" {
-  name = "Abbey_Demo_Site_Kit"
+resource "abbey_grant_kit" "abbey_demo_grant_kit" {
+  name = "Abbey_Demo_Grant_Kit"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
   EOT
@@ -31,7 +31,7 @@ resource "abbey_grant_kit" "abbey_demo_site_kit" {
     steps = [
       {
         reviewers = {
-          one_of = ["hat@abbey.io"]
+          one_of = ["hat+test@abbey.io"]
         }
       }
     ]
