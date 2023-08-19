@@ -1,8 +1,8 @@
 terraform {
   backend "http" {
-    address        = "http://localhost:8080/terraform-http-backend"
-    lock_address   = "http://localhost:8080/terraform-http-backend/lock"
-    unlock_address = "http://localhost:8080/terraform-http-backend/unlock"
+    address        = "https://api.abbey.io/terraform-http-backend"
+    lock_address   = "https://api.abbey.io/terraform-http-backend/lock"
+    unlock_address = "https://api.abbey.io/terraform-http-backend/unlock"
     lock_method    = "POST"
     unlock_method  = "POST"
   }
@@ -18,7 +18,6 @@ terraform {
 provider "abbey" {
   # Configuration options
   bearer_auth = var.abbey_token
-  server_url = "http://localhost:8080/v1/"
 }
 
 resource "abbey_grant_kit" "abbey_quickstart_grant_kit" {
