@@ -21,8 +21,8 @@ provider "abbey" {
   server_url = "http://localhost:8080/v1/"
 }
 
-resource "abbey_grant_kit" "abbey_demo" {
-  name = "Abbey_Demo"
+resource "abbey_grant_kit" "abbey_quickstart_grant_kit" {
+  name = "Abbey_Quickstart_Grant_kit"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
   EOT
