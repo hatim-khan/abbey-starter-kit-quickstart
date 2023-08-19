@@ -20,8 +20,8 @@ provider "abbey" {
   bearer_auth = var.abbey_token
 }
 
-resource "abbey_grant_kit" "abbey_revoke_test" {
-  name = "Abbey_Revoke_Test"
+resource "abbey_grant_kit" "abbey_revoke_kit" {
+  name = "Abbey_Revoke_Kit"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
   EOT
