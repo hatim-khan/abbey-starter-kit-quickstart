@@ -43,7 +43,7 @@ resource "abbey_grant_kit" "abbey_revoke_test_broken" {
   output = {
     # Replace with your own path pointing to where you want your access changes to manifest.
     # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
-    location = "access.tf" # CHANGEME
+    location = "github://hatim-khan/abbey-starter-kit-quickstart/access.tf" # CHANGEME
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access" {
         permission = "read_write"
