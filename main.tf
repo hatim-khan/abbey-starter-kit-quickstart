@@ -20,8 +20,8 @@ provider "abbey" {
   bearer_auth = var.abbey_token
 }
 
-resource "abbey_grant_kit" "abbey_gk" {
-  name = "Abbey_PumpkinTurkey_key"
+resource "abbey_grant_kit" "abbey_g_pumpkin" {
+  name = "Abbey_Pumpkin_key"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
   EOT
@@ -37,7 +37,7 @@ resource "abbey_grant_kit" "abbey_gk" {
   }
 
   policies = [
-    { bundle = "github:://hatim-khan/abbey-starter-kit-quickstart/policies" } # CHANGEME
+    { bundle = "github://hatim-khan/abbey-starter-kit-quickstart/policies" } # CHANGEME
   ]
 
   output = {
