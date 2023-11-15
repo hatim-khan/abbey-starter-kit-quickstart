@@ -28,10 +28,10 @@ resource "abbey_grant_kit" "PagerDuty_Demo" {
     steps = [
       {
         reviewers = {
-          one_of = ["angie@abbey.io"] # CHANGEME
+          one_of = ["hat@abbey.io"] # CHANGEME
         },
         skip_if = [
-          { bundle = "github://songe/abbey-quickstart-prod/policies/on-call" } # CHANGEME
+          { bundle = "github://hatim-khan/abbey-starter-kit-quickstart/policies/on-call" } # CHANGEME
         ]
       }
     ]
@@ -55,7 +55,7 @@ resource "abbey_grant_kit" "PagerDuty_Demo" {
   output = {
     # Replace with your own path pointing to where you want your access changes to manifest.
     # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
-    location = "github://songe/abbey-quickstart-prod/access.tf" # CHANGEME
+    location = "github://hatim-khan/abbey-starter-kit-quickstart/access.tf" # CHANGEME
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access" { # {{ .data.system.abbey.identities.abbey.email | printf "%stest" }}
         permission = "read_write"
