@@ -20,8 +20,8 @@ provider "abbey" {
   bearer_auth = var.abbey_token
 }
 
-resource "abbey_grant_kit" "abbey_invalid_policy" {
-  name = "abbey_invalid_policy"
+resource "abbey_grant_kit" "abbey_invalid_output" {
+  name = "abbey_invalid_output"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
   EOT
@@ -37,13 +37,13 @@ resource "abbey_grant_kit" "abbey_invalid_policy" {
   }
 
   policies = [
-    { bundle = "github://hatim-khan/abbey-starter-kit-quickstart/missing_dir/policies" } # CHANGEME
+    { bundle = "github://hatim-khan/abbey-starter-kit-quickstart/policies" } # CHANGEME
   ]
 
   output = {
     # Replace with your own path pointing to where you want your access changes to manifest.
     # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
-    location = "github://hatim-khan/abbey-starter-kit-quickstart/access.tf" # CHANGEME
+    location = "github://hatim-khan/abbey-starter-kit-quickstart/missing/access.tf" # CHANGEME
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access" {
         permission = "read_write"
