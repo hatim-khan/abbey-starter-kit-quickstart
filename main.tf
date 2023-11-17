@@ -20,7 +20,7 @@ provider "abbey" {
   bearer_auth = var.abbey_token
 }
 
-resource "abbey_grant_kit" "abbey_invalid_gk_missing_path" {
+resource "abbey_grant_kit" "abbey_invalid_gk_missing_permissions" {
   name = "abbey_valid_gk"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
