@@ -20,7 +20,7 @@ provider "abbey" {
   bearer_auth = var.abbey_token
 }
 
-resource "abbey_grant_kit" "abbey_valid_gk" {
+resource "abbey_grant_kit" "abbey_invalid_gk_invalid_scheme" {
   name = "abbey_valid_gk"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
@@ -37,7 +37,7 @@ resource "abbey_grant_kit" "abbey_valid_gk" {
   }
 
   policies = [
-    { bundle = "github://hatim-khan/abbey-starter-kit-quickstart/policies" } # CHANGEME
+    { bundle = "git://hatim-khan/abbey-starter-kit-quickstart/policies" } # CHANGEME
   ]
 
   output = {
