@@ -21,7 +21,7 @@ provider "abbey" {
 }
 
 resource "abbey_grant_kit" "abbey_valid_gk" {
-  name = "abbey_valid_gk"
+  name = "abbey_valid_grant_kit"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
   EOT
