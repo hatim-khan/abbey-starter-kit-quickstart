@@ -45,7 +45,7 @@ resource "abbey_grant_kit" "abbey_demo_site_one" {
     # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
     location = "github://hatim-khan/abbey-starter-kit-quickstart/access.tf" # CHANGEME
     append = <<-EOT
-      resource "abbey_demo" "grant_read_write_access" {
+      resource "abbey_demo" "grant_read_write_access_one" {
         permission = "read_write"
         email = "{{ .data.system.abbey.identities.abbey.email }}"
       }
@@ -78,7 +78,7 @@ resource "abbey_grant_kit" "abbey_demo_site_two" {
     # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
     location = "github://hatim-khan/abbey-starter-kit-quickstart/access.tf" # CHANGEME
     append = <<-EOT
-      resource "abbey_demo" "grant_read_write_access" {
+      resource "abbey_demo" "grant_read_write_access_two" {
         permission = "read_write"
         email = "{{ .data.system.abbey.identities.abbey.email }}"
       }
@@ -111,7 +111,7 @@ resource "abbey_grant_kit" "abbey_demo_site_three" {
     # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
     location = "github://hatim-khan/abbey-starter-kit-quickstart/access.tf" # CHANGEME
     append = <<-EOT
-      resource "abbey_demo" "grant_read_write_access" {
+      resource "abbey_demo" "grant_read_write_access_three" {
         permission = "read_write"
         email = "{{ .data.system.abbey.identities.abbey.email }}"
       }
