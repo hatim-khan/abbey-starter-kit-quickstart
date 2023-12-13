@@ -21,7 +21,7 @@ provider "abbey" {
 }
 
 resource "abbey_grant_kit" "abbey_demo_site_one" {
-  name = "abbey_valid_grant_kit"
+  name = "abbey_demo_site_one"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
   EOT
@@ -54,7 +54,7 @@ resource "abbey_grant_kit" "abbey_demo_site_one" {
 }
 
 resource "abbey_grant_kit" "abbey_demo_site_two" {
-  name = "abbey_valid_grant_kit"
+  name = "abbey_demo_site_two"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
   EOT
@@ -87,7 +87,7 @@ resource "abbey_grant_kit" "abbey_demo_site_two" {
 }
 
 resource "abbey_grant_kit" "abbey_demo_site_three" {
-  name = "abbey_valid_grant_kit"
+  name = "abbey_demo_site_three"
   description = <<-EOT
     Grants access to Abbey's Demo Page.
   EOT
