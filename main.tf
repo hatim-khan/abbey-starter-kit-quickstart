@@ -52,7 +52,7 @@ resource "abbey_grant_kit" "abbey_gk_local_vars" {
   ]
 
   output = {
-    location = local.ouput_location
+    location = local.output_location
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access_local_vars" {
         permission = "read_write"
