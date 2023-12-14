@@ -53,6 +53,39 @@ resource "abbey_grant_kit" "abbey_demo_site_one" {
   }
 }
 
+resource "abbey_grant_kit" "abbey_demo_site_reviewer_not_in_org" {
+  name = "abbey_demo_site_reviewer_not_in_org"
+  description = <<-EOT
+    Grants access to Abbey's Demo Page.
+  EOT
+
+  workflow = {
+    steps = [
+      {
+        reviewers = {
+          one_of = ["koushik@abbey.io"]
+        }
+      }
+    ]
+  }
+
+  policies = [
+    { bundle = "github://hatim-khan/abbey-starter-kit-quickstart/policies" } # CHANGEME
+  ]
+
+  output = {
+    # Replace with your own path pointing to where you want your access changes to manifest.
+    # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
+    location = "github://hatim-khan/abbey-starter-kit-quickstart/access.tf" # CHANGEME
+    append = <<-EOT
+      resource "abbey_demo" "grant_read_write_access_one" {
+        permission = "read_write"
+        email = "{{ .data.system.abbey.identities.abbey.email }}"
+      }
+    EOT
+  }
+}
+
 resource "abbey_grant_kit" "abbey_demo_site_two" {
   name = "abbey_demo_site_two"
   description = <<-EOT
