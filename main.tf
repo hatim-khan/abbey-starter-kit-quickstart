@@ -15,9 +15,51 @@ terraform {
   }
 }
 
+
+locals {
+  account_name = "hatim-khan"
+  repo_name = "abbey-starter-kit-quickstart"
+
+  repo = "github://${local.account_name}/${local.repo_name}"
+  location = "${local.repo}/access.tf"
+  policies = "${local.repo}/policies"
+}
+
 provider "abbey" {
   # Configuration options
   bearer_auth = var.abbey_token
+}
+
+
+resource "abbey_grant_kit" "abbey_gk_local_vars" {
+  name = "abbey_gk_local_vars"
+  description = <<-EOT
+    Grants access to Abbey's Demo Page using local variables.
+  EOT
+
+  workflow = {
+    steps = [
+      {
+        reviewers = {
+          one_of = ["hat@abbey.io"]
+        }
+      }
+    ]
+  }
+
+  policies = [
+    { bundle = local.policies } # CHANGEME
+  ]
+
+  output = {
+    location = local.ouput_location
+    append = <<-EOT
+      resource "abbey_demo" "grant_read_write_access_local_vars" {
+        permission = "read_write"
+        email = "{{ .data.system.abbey.identities.abbey.email }}"
+      }
+    EOT
+  }
 }
 
 resource "abbey_grant_kit" "abbey_demo_site_one" {
