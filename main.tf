@@ -21,7 +21,7 @@ locals {
   repo_name = "abbey-starter-kit-quickstart"
 
   repo = "github://${local.account_name}/${local.repo_name}"
-  location = "${local.repo}/access.tf"
+  output_location = "${local.repo}/access.tf"
   policies = "${local.repo}/policies"
 }
 
