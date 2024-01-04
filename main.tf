@@ -244,7 +244,7 @@ resource "abbey_grant_kit" "abbey_revoke_test_broken" {
   }
 
   policies = [
-    { bundle = "github:://hatim-khan/abbey-starter-kit-quickstart/policies" } # CHANGEME
+    { bundle = "github://hatim-khan/abbey-starter-kit-quickstart/policies" } # CHANGEME
   ]
 
   output = {
