@@ -56,7 +56,7 @@ resource "abbey_grant_kit" "abbey_gk_local_vars" {
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access_local_vars" {
         permission = "read_write"
-        email = "{{ .data.system.abbey.identities.abbey.email }}"
+        email = "{{ .user.email }}"
       }
     EOT
   }
@@ -89,7 +89,7 @@ resource "abbey_grant_kit" "abbey_demo_site_one" {
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access_one" {
         permission = "read_write"
-        email = "{{ .data.system.abbey.identities.abbey.email }}"
+        email = "{{ .user.email }}"
       }
     EOT
   }
@@ -122,7 +122,7 @@ resource "abbey_grant_kit" "abbey_demo_site_reviewer_not_in_org" {
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access_one" {
         permission = "read_write"
-        email = "{{ .data.system.abbey.identities.abbey.email }}"
+        email = "{{ .user.email }}"
       }
     EOT
   }
@@ -155,7 +155,7 @@ resource "abbey_grant_kit" "abbey_demo_site_two" {
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access_two" {
         permission = "read_write"
-        email = "{{ .data.system.abbey.identities.abbey.email }}"
+        email = "{{ .user.email }}"
       }
     EOT
   }
@@ -188,7 +188,7 @@ resource "abbey_grant_kit" "abbey_demo_site_three" {
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access_three" {
         permission = "read_write"
-        email = "{{ .data.system.abbey.identities.abbey.email }}"
+        email = "{{ .user.email }}"
       }
     EOT
   }
@@ -221,7 +221,7 @@ resource "abbey_grant_kit" "abbey_valid_gk" {
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access" {
         permission = "read_write"
-        email = "{{ .data.system.abbey.identities.abbey.email }}"
+        email = "{{ .user.email }}"
       }
     EOT
   }
@@ -254,7 +254,7 @@ resource "abbey_grant_kit" "abbey_revoke_test_broken" {
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access" {
         permission = "read_write"
-        email = "{{ .data.system.abbey.identities.abbey.email }}"
+        email = "{{ .user.email }}"
       }
     EOT
   }
