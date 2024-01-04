@@ -105,7 +105,7 @@ resource "abbey_grant_kit" "abbey_demo_site_reviewer_not_in_org" {
     steps = [
       {
         reviewers = {
-          one_of = ["koushik@abbey.io"]
+          one_of = ["hat@abbey.io"]
         }
       }
     ]
