@@ -7,6 +7,8 @@ on:
 
 jobs:
   materialize:
+    concurrency:
+      group: tf_apply
     runs-on: ubuntu-latest
     env:
       TF_VAR_abbey_token: ${{ secrets.ABBEY_TOKEN }}
