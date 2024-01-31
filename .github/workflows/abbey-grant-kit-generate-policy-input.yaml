@@ -4,12 +4,13 @@ on:
   pull_request:
 jobs:
   output-plan:
-    concurrency:
-      group: tf_apply
     runs-on: ubuntu-latest
     env:
       TF_VAR_abbey_token: ${{ secrets.ABBEY_TOKEN }}
     steps:
+      - name: Workflow Queue
+        uses: ahmadnassri/action-workflow-queue@v1.2.0
+
       - name: Checkout
         uses: actions/checkout@v3
       
