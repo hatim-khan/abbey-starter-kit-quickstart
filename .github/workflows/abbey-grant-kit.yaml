@@ -1,4 +1,4 @@
-name: Abbey Grant Kit Materialize
+name: Abbey Grant Kit Single-Threaded Workflow
 
 on:
   pull_request:
