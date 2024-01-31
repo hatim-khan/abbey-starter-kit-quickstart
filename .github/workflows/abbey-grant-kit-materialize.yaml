@@ -1,12 +1,13 @@
 name: Abbey Grant Kit Materialize
 
 on:
+  pull_request:
   push:
     branches:
       - main
 
 jobs:
-  materialize:
+  plan_and_materialize:
     runs-on: ubuntu-latest
     env:
       TF_VAR_abbey_token: ${{ secrets.ABBEY_TOKEN }}
@@ -29,6 +30,13 @@ jobs:
           TF_HTTP_USERNAME: basic
           TF_HTTP_PASSWORD: ${{ secrets.ABBEY_TOKEN }}
 
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -no-color -input=false -out=tfplan
+        env:
+          TF_HTTP_USERNAME: basic
+          TF_HTTP_PASSWORD: ${{ secrets.ABBEY_TOKEN }}
+          
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
